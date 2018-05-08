@@ -66,8 +66,33 @@ app.post("/save-new-user", function(req, res) {
     res.send('ok')
 })
 
+var message = [{test: "hallo"},{test: "hallo2"}]
+app.use((req, res, next) =>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-width, Content-Type, Accept");
+    next();
+})
+
+app.get("/all-users", function(req, res) {
+    res.json(message);
+})
+
+
+
+app.get('/test',(req, res)=>{
+    // res.json({id: 1});
+    res.sendFile(__dirname + "/test.html");
+})
+
+app.get("/welcome", (req, res)=> {
+    res.json([{id:1},{id:2}])
+
+})
+
+
+
 //Listening to port
-var port = 1982;
+var port = 1983;
 app.listen(port, err => {
     if(err) {
         console.log("error");

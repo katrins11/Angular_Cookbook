@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { PasswordValidator } from '../PasswordValidator';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-log-in',
@@ -42,7 +43,7 @@ export class LogInComponent implements OnInit {
 
     if (signUpForm.valid) {
       // Send an http request to login
-
+      // this.userService.saveNewUser(signUpForm.value)
       // Navigate to the home page (or some other page)
       this.authService.login().subscribe(x => {
         // Can you naviate to the path the user tried to go to instead of 

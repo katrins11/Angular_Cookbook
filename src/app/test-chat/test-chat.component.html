@@ -1,0 +1,17 @@
+<div *ngFor="let message of webService.messages">
+  <mat-card>
+    <div>{{message.chatOwnerName}}</div>
+    <div>{{message.chatText}}</div>
+  </mat-card>
+</div>
+<div>
+  <form [formGroup]="chatInputForm" (submit)="onChatInputSubmit(chatInputForm)" novalidate>        
+    <mat-form-field>
+      <input matInput placeholder="Enter Name" formControlName="chatOwnerName">
+    </mat-form-field>
+    <mat-form-field>
+        <textarea matInput id="" cols="30" rows="5" placeholder="Enter message" formControlName="chatText"></textarea>
+    </mat-form-field>
+    <button class="btnDark" mat-button type="submit" >Login</button>
+  </form>
+</div>

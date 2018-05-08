@@ -11,11 +11,13 @@ import { AdmitPieceComponent } from './admin/admit-piece/admit-piece.component';
 import { AuthGuardService } from './auth-guard.service';
 import { ServiceChatComponent } from './admin/service-chat/service-chat.component';
 import { HomeComponent } from './home/home.component';
+import { TestChatComponent } from './test-chat/test-chat.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'home',  pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'chat', component: TestChatComponent },
   { path: 'pieces', component: PiecesComponent },
   { path: 'creatives', component: CreativesComponent },
   { path: 'about', component: AboutComponent },

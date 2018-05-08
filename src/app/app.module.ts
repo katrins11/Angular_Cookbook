@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 //Material
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 //Routing
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,17 +28,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 
 //AuthService
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
 
-import { HttpClientModule } from '@angular/common/http';
-
-
-
-
+import { HttpModule } from '@angular/http';
+import { TestChatComponent } from './test-chat/test-chat.component';
+import { WebServiceService } from './web-service.service';
 
 
 @NgModule({
@@ -53,7 +52,8 @@ import { HttpClientModule } from '@angular/common/http';
     CreativesComponent,
     AboutComponent,
     PiecesComponent,
-    HomeComponent
+    HomeComponent,
+    TestChatComponent
   ],
   imports: [
     BrowserModule,
@@ -64,12 +64,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatCheckboxModule,
     MatToolbarModule,
     MatMenuModule,
+    MatCardModule,
     MatSelectModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpModule
   ],
-  providers: [AuthGuardService, AuthService],
+  providers: [AuthGuardService, AuthService, WebServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
